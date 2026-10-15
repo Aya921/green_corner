@@ -1,27 +1,88 @@
 @import 'tailwindcss';
 
-/*
-  Spacing uses Tailwind's default scale: 0.25rem per step.
-  Example: p-4 is 1rem. Do not add a second spacing system.
-*/
+
 @theme {
-  --color-canvas: #f4f1ea;
-  --color-surface: #fbf9f5;
-  --color-ink: #1c2b24;
-  --color-ink-muted: #5c6b62;
-  --color-leaf: #1f6a45;
-  --color-leaf-soft: #e5efe8;
-  --color-moss: #8a9a7b;
-  --color-line: #e3dcd0;
+  --color-primary-50: #e7f6ec;
+  --color-primary-100: #cdead6;
+  --color-primary-200: #b2cfbb;
+  --color-primary-300: #7b9884;
+  --color-primary-400: #627f6d;
+  --color-primary-500: #4a6554;
+  --color-primary-600: #326048;
+  --color-primary-700: #254d3a;
+  --color-primary-800: #1e3628;
+  --color-primary-900: #163026;
+  --color-primary-950: #0c2014;
 
-  --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --color-secondary-50: #f3f6ef;
+  --color-secondary-100: #e7f5dc;
+  --color-secondary-200: #d8e6cf;
+  --color-secondary-300: #bdcbb4;
+  --color-secondary-400: #a8b9a0;
+  --color-secondary-500: #889480;
+  --color-secondary-600: #6f7b67;
+  --color-secondary-700: #576251;
+  --color-secondary-800: #3f4a39;
+  --color-secondary-900: #283323;
+  --color-secondary-950: #151d0e;
 
-  --radius-sm: 0.375rem;
+  --color-tertiary-50: #fbf3ef;
+  --color-tertiary-100: #f7dcd1;
+  --color-tertiary-200: #f0b89f;
+  --color-tertiary-300: #de997a;
+  --color-tertiary-400: #bf7e60;
+  --color-tertiary-500: #c77353;
+  --color-tertiary-600: #a2664a;
+  --color-tertiary-700: #854d34;
+  --color-tertiary-800: #693720;
+  --color-tertiary-900: #4f220d;
+  --color-tertiary-950: #301005;
+
+  --color-neutral-50: #f4f5f7;
+  --color-neutral-100: #edefea;
+  --color-neutral-200: #e2e5de;
+  --color-neutral-300: #c6c9c2;
+  --color-neutral-400: #aaada6;
+  --color-neutral-500: #8f928b;
+  --color-neutral-600: #757772;
+  --color-neutral-700: #5d6059;
+  --color-neutral-800: #454742;
+  --color-neutral-900: #2f312c;
+  --color-neutral-950: #252923;
+
+  --color-background: #f4f5f7;
+  --color-foreground: #252923;
+  --color-surface: #ecefe8;
+  --color-card: #ecefe8;
+  --color-primary: #254d3a;
+  --color-primary-foreground: #f7f8f6;
+  --color-secondary: #a8b9a0;
+  --color-secondary-foreground: #252923;
+  --color-accent: #c77353;
+  --color-accent-foreground: #fffdfb;
+  --color-muted: #e6e9e2;
+  --color-muted-foreground: #5d6059;
+  --color-border: #d8dbd4;
+  --color-input: #e7eae3;
+  --color-ring: #254d3a;
+  --color-danger: #9a372e;
+  --color-danger-foreground: #fffdfb;
+
+  --font-sans: 'Manrope', 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Outfit', 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1.25rem;
 
-  --shadow-soft: 0 10px 30px rgb(28 43 36 / 0.06);
+  --shadow-soft: 0 10px 30px rg
+  
+  b(37 41 35 / 0.06);
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 }
 
 @layer base {
@@ -32,9 +93,10 @@
   body {
     margin: 0;
     min-height: 100vh;
-    background-color: var(--color-canvas);
-    color: var(--color-ink);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-weight: 400;
     line-height: 1.5;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -42,9 +104,26 @@
 
   h1,
   h2,
-  h3 {
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
     font-weight: 500;
     text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background-color: var(--color-secondary);
+    color: var(--color-foreground);
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
   }
 }

@@ -27,3 +27,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Cursor MCP configuration (may contain API keys)
+.cursor/mcp.json
