@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 
-
 @theme {
   --color-primary-50: #e7f6ec;
   --color-primary-100: #cdead6;
@@ -67,6 +66,8 @@
   --color-ring: #254d3a;
   --color-danger: #9a372e;
   --color-danger-foreground: #fffdfb;
+  --color-warning: #8a5a12;
+  --color-warning-foreground: #fff8ef;
 
   --font-sans: 'Manrope', 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif;
   --font-display: 'Outfit', 'Noto Sans Arabic', ui-sans-serif, system-ui, sans-serif;
@@ -75,9 +76,8 @@
   --radius-md: 0.75rem;
   --radius-lg: 1.25rem;
 
-  --shadow-soft: 0 10px 30px rg
-  
-  b(37 41 35 / 0.06);
+  --shadow-soft: 0 10px 30px rgb(37 41 35 / 0.06);
+  --animate-toast-in: toast-in 180ms ease-out;
 
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -125,5 +125,17 @@
   img {
     max-width: 100%;
     display: block;
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
